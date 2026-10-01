@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Soundroom</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <script>
+            window.va =
+                window.va ||
+                function () {
+                    (window.vaq = window.vaq || []).push(arguments);
+                };
+        </script>
+
+        <script defer src="/_vercel/insights/script.js"></script>
+
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main class="app-shell">
+            <aside class="sidebar">
+                <a class="brand" href="#" aria-label="Soundroom home"
+                    ><span class="brand-mark">◉</span><span>Soundroom</span></a
+                >
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a class="nav-link active" href="#"><span>⌂</span> Home</a>
+                    <a class="nav-link" href="#"><span>⌕</span> Search</a>
+                </nav>
+                <div class="library-heading">
+                    <span>▣</span><strong>Your Library</strong
+                    ><button
+                        class="add-button"
+                        type="button"
+                        aria-label="Add playlist"
+                    >
+                        +
+                    </button>
+                </div>
+                <div id="playlist-list" class="playlist-list"></div>
+            </aside>
+
+            <section class="content">
+                <header class="topbar">
+                    <div class="history-controls">
+                        <button
+                            type="button"
+                            class="round-button"
+                            aria-label="Go back"
+                        >
+                            ‹</button
+                        ><button
+                            type="button"
+                            class="round-button muted"
+                            aria-label="Go forward"
+                        >
+                            ›
+                        </button>
+                    </div>
+                    <div class="profile-pill">
+                        <span class="avatar">A</span> Abhimanyu
+                        <span class="profile-chevron">⌄</span>
+                    </div>
+                </header>
+                <div class="content-scroll">
+                    <section
+                        class="playlist-hero"
+                        aria-labelledby="playlist-title"
+                    >
+                        <div class="cover-art">
+                            <span>♪</span><i></i><b></b>
+                        </div>
+                        <div class="hero-copy">
+                            <p class="eyebrow">Playlist</p>
+                            <h1 id="playlist-title">Late night focus</h1>
+                            <p>
+                                Quiet songs for focused work, slow evenings, and
+                                everything in between.
+                            </p>
+                            <small
+                                >Soundroom ·
+                                <span id="track-count">3 tracks</span></small
+                            >
+                        </div>
+                    </section>
+                    <div class="playlist-actions">
+                        <button
+                            id="hero-play"
+                            class="play-button"
+                            type="button"
+                            aria-label="Play playlist"
+                        >
+                            ▶</button
+                        ><button
+                            class="more-button"
+                            type="button"
+                            aria-label="More options"
+                        >
+                            •••
+                        </button>
+                    </div>
+                    <section
+                        id="track-list"
+                        class="track-list"
+                        aria-label="Tracks"
+                    ></section>
+                </div>
+            </section>
+
+            <footer class="player-bar">
+                <div class="now-playing">
+                    <div id="now-art" class="mini-art art-indigo">♪</div>
+                    <div>
+                        <strong id="now-title">Midnight Walk</strong
+                        ><span id="now-artist">The Soundroom Sessions</span>
+                    </div>
+                    <button
+                        class="like-button"
+                        type="button"
+                        aria-label="Like song"
+                    >
+                        ♡
+                    </button>
+                </div>
+                <div class="player-controls">
+                    <div class="control-row">
+                        <button
+                            id="previous-button"
+                            class="player-button"
+                            type="button"
+                            aria-label="Previous track"
+                        >
+                            |‹</button
+                        ><button
+                            id="play-button"
+                            class="play-button"
+                            type="button"
+                            aria-label="Play"
+                        >
+                            ▶</button
+                        ><button
+                            id="next-button"
+                            class="player-button"
+                            type="button"
+                            aria-label="Next track"
+                        >
+                            ›|
+                        </button>
+                    </div>
+                    <div class="progress-row">
+                        <span id="current-time">0:00</span
+                        ><input
+                            id="progress-bar"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            aria-label="Song progress"
+                        /><span id="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="volume-control">
+                    <span>⌁</span
+                    ><input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="70"
+                        aria-label="Volume"
+                    />
+                </div>
+            </footer>
+        </main>
+        <audio id="audio-player" preload="metadata"></audio>
+    </body>
+</html>
